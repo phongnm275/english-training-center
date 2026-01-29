@@ -1,0 +1,65 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.AppxBundle
+*.appx
+
+# Visual Studio cache
+.vs/
+.vscode/
+*.userprefs
+*.suo
+*.user
+*.userosscache
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+coverage.opencover.xml
+
+# Entity Framework
+Migrations/
+
+# Logs
+logs/
+*.log
+
+# Dependencies
+packages/
+.nuget/
+node_modules/
+
+# Database
+*.mdf
+*.ldf
+*.ndf
+
+# Environment
+appsettings.Development.json
+appsettings.Production.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+publish/
+PublishProfiles/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Temporary
+temp/
+tmp/
+*.tmp
+
+# Package manager
+package-lock.json
+yarn.lock

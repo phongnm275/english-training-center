@@ -1,0 +1,52 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.0.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1A2D4B6F-8E9C-4D2A-9B5E-7F3C8A1D6E9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2B3E5C7G-9F0D-5E3B-0C6F-8G4D9B2E7F0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7B33}") = "EnglishTrainingCenter.API", "src\EnglishTrainingCenter.API\EnglishTrainingCenter.API.csproj", "{3C4F6D8H-0G1E-6F4C-1D7G-9H5E0C3F8G1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7B33}") = "EnglishTrainingCenter.Application", "src\EnglishTrainingCenter.Application\EnglishTrainingCenter.Application.csproj", "{4D5G7E9I-1H2F-7G5D-2E8H-0I6F1D4G9H2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7B33}") = "EnglishTrainingCenter.Domain", "src\EnglishTrainingCenter.Domain\EnglishTrainingCenter.Domain.csproj", "{5E6H8F0J-2I3G-8H6E-3F9I-1J7G2E5H0I3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7B33}") = "EnglishTrainingCenter.Infrastructure", "src\EnglishTrainingCenter.Infrastructure\EnglishTrainingCenter.Infrastructure.csproj", "{6F7I9G1K-3J4H-9I7F-4G0J-2K8H3F6I1J4G}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7B33}") = "EnglishTrainingCenter.Common", "src\EnglishTrainingCenter.Common\EnglishTrainingCenter.Common.csproj", "{7G8J0H2L-4K5I-0J8G-5H1K-3L9I4G7J2K5H}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7B33}") = "EnglishTrainingCenter.Tests.Unit", "tests\EnglishTrainingCenter.Tests.Unit\EnglishTrainingCenter.Tests.Unit.csproj", "{8H9K1I3M-5L6J-1K9H-6I2L-4M0J5H8K3L6I}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C4F6D8H-0G1E-6F4C-1D7G-9H5E0C3F8G1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4F6D8H-0G1E-6F4C-1D7G-9H5E0C3F8G1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4F6D8H-0G1E-6F4C-1D7G-9H5E0C3F8G1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4F6D8H-0G1E-6F4C-1D7G-9H5E0C3F8G1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5G7E9I-1H2F-7G5D-2E8H-0I6F1D4G9H2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5G7E9I-1H2F-7G5D-2E8H-0I6F1D4G9H2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5G7E9I-1H2F-7G5D-2E8H-0I6F1D4G9H2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5G7E9I-1H2F-7G5D-2E8H-0I6F1D4G9H2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6H8F0J-2I3G-8H6E-3F9I-1J7G2E5H0I3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6H8F0J-2I3G-8H6E-3F9I-1J7G2E5H0I3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6H8F0J-2I3G-8H6E-3F9I-1J7G2E5H0I3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6H8F0J-2I3G-8H6E-3F9I-1J7G2E5H0I3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7I9G1K-3J4H-9I7F-4G0J-2K8H3F6I1J4G}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7I9G1K-3J4H-9I7F-4G0J-2K8H3F6I1J4G}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7I9G1K-3J4H-9I7F-4G0J-2K8H3F6I1J4G}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7I9G1K-3J4H-9I7F-4G0J-2K8H3F6I1J4G}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7G8J0H2L-4K5I-0J8G-5H1K-3L9I4G7J2K5H}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7G8J0H2L-4K5I-0J8G-5H1K-3L9I4G7J2K5H}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7G8J0H2L-4K5I-0J8G-5H1K-3L9I4G7J2K5H}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7G8J0H2L-4K5I-0J8G-5H1K-3L9I4G7J2K5H}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8H9K1I3M-5L6J-1K9H-6I2L-4M0J5H8K3L6I}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8H9K1I3M-5L6J-1K9H-6I2L-4M0J5H8K3L6I}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8H9K1I3M-5L6J-1K9H-6I2L-4M0J5H8K3L6I}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8H9K1I3M-5L6J-1K9H-6I2L-4M0J5H8K3L6I}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
