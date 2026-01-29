@@ -273,3 +273,141 @@ public class Grade : BaseEntity
     public virtual Student? Student { get; set; }
     public virtual Exam? Exam { get; set; }
 }
+
+/// <summary>
+/// CRM Customer entity
+/// </summary>
+public class Customer : BaseEntity
+{
+    public string CompanyName { get; set; } = string.Empty;
+    public string ContactName { get; set; } = string.Empty;
+    public string? Email { get; set; }
+    public string? Phone { get; set; }
+    public string? Website { get; set; }
+    public string? Address { get; set; }
+    public string? City { get; set; }
+    public string? Country { get; set; }
+    public string? IndustryType { get; set; }
+    public int? EmployeeCount { get; set; }
+    public decimal? AnnualRevenue { get; set; }
+    public string Status { get; set; } = "Active"; // Active, Inactive, Prospect
+    public string? CustomerSegment { get; set; } // Enterprise, Mid-Market, SMB
+    public int? PreferredLanguageLevel { get; set; } // Reference to Course level
+    public int? AssignedAccountManagerId { get; set; }
+    public DateTime? LastInteractionDate { get; set; }
+    public string? Notes { get; set; }
+    public bool IsActive { get; set; } = true;
+
+    // Navigation
+    public virtual User? AssignedAccountManager { get; set; }
+    public virtual ICollection<Lead> Leads { get; set; } = new List<Lead>();
+    public virtual ICollection<Opportunity> Opportunities { get; set; } = new List<Opportunity>();
+    public virtual ICollection<CrmInteraction> Interactions { get; set; } = new List<CrmInteraction>();
+    public virtual ICollection<CrmNote> Notes_Collection { get; set; } = new List<CrmNote>();
+}
+
+/// <summary>
+/// CRM Lead entity
+/// </summary>
+public class Lead : BaseEntity
+{
+    public int? CustomerId { get; set; }
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public string? Email { get; set; }
+    public string? Phone { get; set; }
+    public string? CompanyName { get; set; }
+    public string? JobTitle { get; set; }
+    public string Source { get; set; } = string.Empty; // Website, Email, Phone, Referral, Event
+    public string Status { get; set; } = "New"; // New, Qualified, Contacted, Unqualified, Converted
+    public decimal? EstimatedValue { get; set; }
+    public int? AssignedSalesRepId { get; set; }
+    public DateTime? LastContactDate { get; set; }
+    public int? FollowUpDaysRemaining { get; set; }
+    public string? InterestLevel { get; set; } // Hot, Warm, Cold
+    public string? PreferredCourse { get; set; }
+    public string? Notes { get; set; }
+    public bool IsActive { get; set; } = true;
+
+    // Navigation
+    public virtual Customer? Customer { get; set; }
+    public virtual User? AssignedSalesRep { get; set; }
+    public virtual ICollection<CrmInteraction> Interactions { get; set; } = new List<CrmInteraction>();
+    public virtual ICollection<CrmNote> Notes_Collection { get; set; } = new List<CrmNote>();
+}
+
+/// <summary>
+/// CRM Opportunity entity
+/// </summary>
+public class Opportunity : BaseEntity
+{
+    public int CustomerId { get; set; }
+    public string OpportunityName { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public decimal Value { get; set; }
+    public string Currency { get; set; } = "USD";
+    public string Stage { get; set; } = "Prospect"; // Prospect, Qualification, Proposal, Negotiation, Closed Won, Closed Lost
+    public decimal? Probability { get; set; } // 0-100
+    public DateTime? EstimatedCloseDate { get; set; }
+    public DateTime? ActualCloseDate { get; set; }
+    public int? AssignedOwnerId { get; set; }
+    public string? CompetitorInfo { get; set; }
+    public string? WinLossReason { get; set; }
+    public string? Notes { get; set; }
+    public bool IsActive { get; set; } = true;
+
+    // Navigation
+    public virtual Customer? Customer { get; set; }
+    public virtual User? AssignedOwner { get; set; }
+    public virtual ICollection<CrmInteraction> Interactions { get; set; } = new List<CrmInteraction>();
+    public virtual ICollection<CrmNote> Notes_Collection { get; set; } = new List<CrmNote>();
+}
+
+/// <summary>
+/// CRM Interaction entity (calls, emails, meetings)
+/// </summary>
+public class CrmInteraction : BaseEntity
+{
+    public int? CustomerId { get; set; }
+    public int? LeadId { get; set; }
+    public int? OpportunityId { get; set; }
+    public string InteractionType { get; set; } = string.Empty; // Call, Email, Meeting, Demo
+    public string Subject { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public DateTime InteractionDate { get; set; } = DateTime.UtcNow;
+    public int? DurationMinutes { get; set; }
+    public int? CreatedByUserId { get; set; }
+    public string? Outcome { get; set; } // Positive, Negative, Neutral, Follow-up Required
+    public DateTime? NextFollowUpDate { get; set; }
+    public string? Attachments { get; set; } // JSON array of file URLs
+    public bool IsActive { get; set; } = true;
+
+    // Navigation
+    public virtual Customer? Customer { get; set; }
+    public virtual Lead? Lead { get; set; }
+    public virtual Opportunity? Opportunity { get; set; }
+    public virtual User? CreatedByUser { get; set; }
+}
+
+/// <summary>
+/// CRM Note entity
+/// </summary>
+public class CrmNote : BaseEntity
+{
+    public int? CustomerId { get; set; }
+    public int? LeadId { get; set; }
+    public int? OpportunityId { get; set; }
+    public string? InteractionId { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string Content { get; set; } = string.Empty;
+    public int CreatedByUserId { get; set; }
+    public bool IsPrivate { get; set; } = false;
+    public string? Tags { get; set; } // JSON array of tags
+    public bool IsActive { get; set; } = true;
+
+    // Navigation
+    public virtual Customer? Customer { get; set; }
+    public virtual Lead? Lead { get; set; }
+    public virtual Opportunity? Opportunity { get; set; }
+    public virtual User? CreatedByUser { get; set; }
+}
